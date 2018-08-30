@@ -24,5 +24,13 @@ class NewspaperListView(generic.ListView):
     model = Newspaper
 
 
-class NewspaperQuizListView(generic.ListView):
+class NewspaperDetailView(generic.DetailView):
     model = Newspaper
+
+
+class NewspaperQuizListView(generic.ListView):
+    model = NewspaperQuiz
+
+
+class NewspaperQuizDetailView(generic.DetailView):
+    model = NewspaperQuiz

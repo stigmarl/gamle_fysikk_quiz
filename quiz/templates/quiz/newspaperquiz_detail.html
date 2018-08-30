@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<h3>Newspaper name: {{ newspaperquiz.newspaper.name }}</h3>
+<h3>Maximum score: {{ newspaperquiz.max_score }}</h3>
+
+<ul>
+  {% for quiz in newspaperquiz.quizinstance_set.all %}
+  <li>Score at {{ quiz.completed_date }}: {{quiz.score}} </li>
+  {% endfor %}
+
+</ul>
+
+
+{% endblock content %}

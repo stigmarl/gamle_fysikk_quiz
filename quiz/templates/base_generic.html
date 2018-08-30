@@ -23,7 +23,10 @@
             <a href="{% url 'index' %}">Home</a>
           </li>
           <li>
-            <a href="">All newspapers</a>
+            <a href="{% url 'newspapers' %}">All newspapers</a>
+          </li>
+          <li>
+            <a href="{% url 'news-quizs' %}">All quizes</a>
           </li>
         </ul>
         {% endblock %}

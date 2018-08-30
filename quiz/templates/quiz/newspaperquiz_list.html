@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<h1>Newspaper Quiz List</h1>
+{% if newspaperquiz_list %}
+<ul>
+  {% for newspaperquiz in newspaperquiz_list %}
+  <li>
+    <a href="{{ newspaperquiz.get_absolute_url }}">{{newspaperquiz.newspaper.name}}</a>
+  </li>
+
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no newspapers in the list.</p>
+{% endif %} {% endblock content %}

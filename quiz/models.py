@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.core.validators import MaxValueValidator
 from django.core.exceptions import ValidationError
 
@@ -19,6 +20,9 @@ class Newspaper(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('newspaper-detail', args=[str(self.id)])
+
 
 class NewspaperQuiz(models.Model):
 
@@ -33,6 +37,9 @@ class NewspaperQuiz(models.Model):
 
     def __str__(self):
         return "{0}-quiz".format(self.newspaper.name)
+
+    def get_absolute_url(self):
+        return reverse('news-quiz-detail', args=[str(self.id)])
 
 
 class QuizInstance(models.Model):

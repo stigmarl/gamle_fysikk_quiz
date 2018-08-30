@@ -12,4 +12,6 @@
 </ul>
 {% else %}
 <p>There are no newspapers in the list.</p>
-{% endif %} {% endblock content %}
+{% endif %}
+<button class="btn btn-primary" onclick="location.href='{% url 'newspaper-add' %}';">Add Newspaper</button>
+{% endblock content %}

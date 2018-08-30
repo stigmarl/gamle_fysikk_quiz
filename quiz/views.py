@@ -1,4 +1,6 @@
 from django.views import generic
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.urls import reverse_lazy
 from django.shortcuts import render
 from .models import Newspaper, NewspaperQuiz, QuizInstance
 
@@ -34,3 +36,18 @@ class NewspaperQuizListView(generic.ListView):
 
 class NewspaperQuizDetailView(generic.DetailView):
     model = NewspaperQuiz
+
+
+class NewspaperCreate(CreateView):
+    model = Newspaper
+    fields = '__all__'
+
+
+class NewspaperUpdate(UpdateView):
+    model = Newspaper
+    fields = '__all__'
+
+
+class NewspaperDelete(DeleteView):
+    model = Newspaper
+    success_url = reverse_lazy('newspapers')

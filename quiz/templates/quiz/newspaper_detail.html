@@ -2,4 +2,7 @@
 
 <h1>Newspaper name: {{ newspaper.name }}</h1>
 
+<button type="button" class="btn btn-primary" onclick="location.href='{% url 'newspaper-update' pk=newspaper.pk %}'">Edit</button>
+<button type="button" class="btn btn-danger" onclick="location.href='{% url 'newspaper-delete' pk=newspaper.pk %}'">Delete</button>
+
 {% endblock content %}
